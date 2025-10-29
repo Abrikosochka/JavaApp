@@ -49,20 +49,23 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User findById(int id) {
-        String sql = "SELECT * FROM public.users WHERE id = ?";
+    public User findByUsernameAndPassword(String username, String password) {
+        String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
         try (Connection conn = DatabaseUtil.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
-            ps.setInt(1, id);
+            ps.setString(1, username);
+            ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
+
             if (rs.next()) {
-                User u = new User();
-                u.setId(rs.getInt("id"));
-                u.setUsername(rs.getString("username"));
-                u.setPassword(rs.getString("password"));
-                return u;
+                User user = new User();
+                user.setId(rs.getInt("id"));
+                user.setUsername(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                return user;
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

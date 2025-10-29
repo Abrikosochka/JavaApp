@@ -5,5 +5,5 @@ import model.User;
 public interface UserDao {
     void save(User user);
     List<User> findAll();
-    User findById(int id);
+    User findByUsernameAndPassword(String username, String password);
 }

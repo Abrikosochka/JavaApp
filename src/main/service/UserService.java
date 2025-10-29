@@ -20,7 +20,8 @@ public class UserService {
         return userDao.findAll();
     }
 
-    public User getUser(int id) {
-        return userDao.findById(id);
+    public boolean login(String username, String password) {
+        User user = userDao.findByUsernameAndPassword(username, password);
+        return user != null;
     }
 }

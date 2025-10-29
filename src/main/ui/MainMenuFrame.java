@@ -39,10 +39,22 @@ public class MainMenuFrame extends JFrame {
         panel.add(btnRegister, gbc);
 
         gbc.gridy++;
+        JButton btnLogin = new JButton("🔐 Войти");
+        btnLogin.setFont(new Font("SansSerif", Font.PLAIN, 16));
+        btnLogin.addActionListener(this::openLogin);
+        panel.add(btnLogin, gbc);
+
+        gbc.gridy++;
         JButton btnUsers = new JButton("📋 Список пользователей");
         btnUsers.setFont(new Font("SansSerif", Font.PLAIN, 16));
         btnUsers.addActionListener(this::openUserList);
         panel.add(btnUsers, gbc);
+
+        gbc.gridy++;
+        JButton btnRooms = new JButton("🏠 Просмотр номеров");
+        btnRooms.setFont(new Font("SansSerif", Font.PLAIN, 16));
+        btnRooms.addActionListener(this::openRoomList);
+        panel.add(btnRooms, gbc);
 
         add(panel);
     }
@@ -53,5 +65,13 @@ public class MainMenuFrame extends JFrame {
 
     private void openUserList(ActionEvent e) {
         new UserListFrame().setVisible(true);
+    }
+
+    private void openLogin(ActionEvent e) {
+        new LoginFrame().setVisible(true);
+    }
+
+    private void openRoomList(ActionEvent e) {
+        new RoomListFrame().setVisible(true);
     }
 }
