@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>   <!-- 🟢 ВАЖНО: добавляем эту строку -->
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.controller.RoomListController">
+
+    <top>
+        <HBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Список номеров" styleClass="title"/>
+            <Button text="➕ Добавить" fx:id="addBtn" onAction="#openAddRoom" visible="false"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+            <content>
+                <FlowPane fx:id="roomContainer" hgap="20" vgap="20"/>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

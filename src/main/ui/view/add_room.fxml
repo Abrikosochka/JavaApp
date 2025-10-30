@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ui.controller.AddRoomController"
+      alignment="CENTER"
+      spacing="15"
+      styleClass="form-root">
+    <Label text="Добавление номера" styleClass="title"/>
+    <TextField fx:id="numberField" promptText="Номер"/>
+    <TextField fx:id="areaField" promptText="Площадь (м²)"/>
+    <TextField fx:id="guestsField" promptText="Количество гостей"/>
+    <HBox spacing="5">
+        <TextField fx:id="photoField" promptText="Фото" editable="false" prefWidth="250"/>
+        <Button text="Выбрать" onAction="#choosePhoto"/>
+    </HBox>
+    <Button text="Добавить" onAction="#addRoom" styleClass="primary-button"/>
+</VBox>

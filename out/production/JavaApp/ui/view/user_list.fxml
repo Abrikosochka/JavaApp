@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.controller.UserListController"
+            fitToWidth="true">
+    <VBox fx:id="userContainer" spacing="10" alignment="CENTER" style="-fx-padding: 20;"/>
+</ScrollPane>
